@@ -1,0 +1,13 @@
+on: push
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: repo-sync
+      uses: wei/git-sync@v2
+      with:
+        source_repo: "https://github.com/testorg93/SyncTest"
+        source_branch: "refs/remotes/source/*"
+        destination_repo: "https://github.com/neworg93/test_sync_1"
+        destination_branch: "refs/heads/*"
+        # ssh_private_key: ${{ secrets.KEY }}
